@@ -72,6 +72,15 @@ async function run() {
   })
 
 
+  app.get('/fire',async(req,res)=>{
+    const query={category : 'fire'}
+    const cursor=toyCollections.find(query)
+    const result=await cursor.toArray()
+    res.send(result)
+  })
+
+
+
 
     app.put("/updateToys/:id", async (req, res) => {
       const id = req.params.id;
