@@ -64,6 +64,12 @@ async function run() {
     const result=await cursor.toArray()
     res.send(result)
   })
+  app.get('/sportstoy',async(req,res)=>{
+    const query={category : 'sports'}
+    const cursor=toyCollections.find(query)
+    const result=await cursor.toArray()
+    res.send(result)
+  })
 
 
 
