@@ -51,6 +51,11 @@ async function run() {
         const result= await toyCollections.find({}).sort({price:1}).toArray()
         res.send(result)
     })
+
+    app.get('/limit',async(req,res)=>{
+      const result= await toyCollections.find({}).limit(20).sort({price:1}).toArray()
+      res.send(result)
+  })
   //   app.get('/allToysforHome',async(req,res)=>{
   //     const query={}
   //     const cursor=toyCollections.find(query).sort({price:-1})
